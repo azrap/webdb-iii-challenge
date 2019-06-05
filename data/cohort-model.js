@@ -25,7 +25,7 @@ function find() {
 //Select * from cohorts where id=x;
 
  function findById(id) {
-    return db('cohorts').where({id}); //can also say ('id', id)
+    // return db('cohorts').where({id}); 
 }
 
 function findCohortStudents(id) {
