@@ -16,7 +16,8 @@ server.get('/', (req, res) => {
   //routing and API:
   
   const cohortRouter = require('./data/cohortRouter.js');
+  const studentRouter = require('./data/studentRouter.js');
   server.use('/api/cohorts', cohortRouter);
-  
+  server.use('/api/students', studentRouter);
   
 module.exports = server;

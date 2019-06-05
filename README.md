@@ -67,4 +67,13 @@ Data migration notes:
 - modify: knexfile.js to configure our db connections
 - make a migration for each db schema change
 - remove/comment all configurations you don't need (staging, production in our case)
-- 
+
+To create a fresh new migration file to make a new table:
+  - npx knex migrate:make <name>
+
+Once you've written what you need to make/update the table, you need to run the latest migration:
+
+  - npx knex migrate:latest
+
+to rollback/revert the last change:
+  - npx knex migrate:rollback
