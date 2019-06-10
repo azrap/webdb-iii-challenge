@@ -18,11 +18,15 @@ Use knex migrations to create a database called `lambda.db3` and add the followi
 - `id`: primary key, auto-increments.
 - `name`: text, required.
 
+
+
 #### students
 
 - `id`: primary key, auto-increments.
 - `name`: text, required.
 - `cohort_id`: references the `id` in the cohorts table.
+
+
 
 Use knex seeding feature to add test data to your tables.
 
@@ -54,3 +58,22 @@ Have the student returned by the `[GET] /students/:id` endpoint include the coho
   cohort: 'Full Stack Web Infinity'
 }
 ```
+
+
+Data migration notes:
+
+- run: npx knex to get all the commands for knex
+- run: npx knex init: to generate a fresh knexfile.js in the root folder
+- modify: knexfile.js to configure our db connections
+- make a migration for each db schema change
+- remove/comment all configurations you don't need (staging, production in our case)
+
+To create a fresh new migration file to make a new table:
+  - npx knex migrate:make <name>
+
+Once you've written what you need to make/update the table, you need to run the latest migration:
+
+  - npx knex migrate:latest
+
+to rollback/revert the last change:
+  - npx knex migrate:rollback
